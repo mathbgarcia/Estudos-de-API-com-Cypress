@@ -1,0 +1,26 @@
+@@ -0,0 +1,25 @@
+// ***********************************************************
+Este exemplo de suporte/índice.js é processado e
+carregado automaticamente antes de seus arquivos de teste.
+//
+Este é um ótimo lugar para colocar configuração global e
+comportamento que modifica Cypress.
+//
+Você pode alterar a localização deste arquivo ou desativar
+servindo automaticamente arquivos de suporte com o
+Opção de configuração 'supportFile'.
+//
+Você pode ler mais aqui:
+https://on.cypress.io/configuration
+// ***********************************************************
+
+Comandos de importação.js usando sintaxe ES2015:
+importação './comandos'
+Cypress. em('uncaught:exception', (err, runnable) => {
+    retornando falso aqui impede Cypress de
+    falhando no teste
+ retorno falso
+  })
+
+Alternativamente, você pode usar a sintaxe CommonJS:
+requerem ('./comandos')
