@@ -1,0 +1,26 @@
+@@ -0,0 +1,25 @@
+// ***********************************************
+Este exemplo comanda.js mostra como
+criar vários comandos personalizados e substituir
+comandos existentes.
+//
+Para exemplos mais abrangentes de costume
+comandos leia mais aqui:
+https://on.cypress.io/custom-commands
+// ***********************************************
+//
+//
+- Este é um comando pai -
+Cypress.Commands.add ('login', (e-mail, senha) => { ... })
+//
+//
+- Este é um comando infantil -
+Cypress.Commands.add('drag', { prevSubject: 'element'}, (assunto, opções) => { ... })
+//
+//
+- Este é um comando duplo -
+Cypress.Commands.add('dismiss', { prevSubject: 'opcional'}, (assunto, opções) => { ... })
+//
+//
+- Isso substituirá um comando existente-
+Cypress.Commands.overwrite('visit', (originalFn, url, opções) => { ... })
