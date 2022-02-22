@@ -1,0 +1,118 @@
+@@ -0,0 +1,117 @@
+/// <reference types="cypress"/> 
+
+export class ApiRest {
+
+    constructor() {
+ isso. param = novo Mapa()
+ isso. cabeçalho = novo Mapa()
+ isso. addHeader ("aceitar"," "aplicativo/json")
+ isso. addHeader ("tipo de conteúdo", "aplicativo/json")
+    }
+
+ adicionarParams = (param, valor) => {
+ isso. param. set (param, valor)
+    }
+
+ addHeader = (cabeçalho, valor) => {
+ isso. cabeçalho. conjunto (cabeçalho, valor)
+    }
+
+    executeGet = (url) => {
+ const paramObj = Objeto. de entradas (isso. param)
+  cabeçalho constObj = Objeto. de entradas (isso. cabeçalho)
+
+ cy. o registro de registro ("=====================================',
+ cy. log('URL: ${url}')
+ cy. log(paramObj)
+
+ retorno cy. solicitação({
+ método: 'GET',
+            url: url,
+            qs: paramObj,
+ cabeçalhos: cabeçalhosObj,
+ "failOnStatusCode": falso
+        })
+    }
+
+    executePost = (url, body) => {
+ const paramObj = Objeto. de entradas (isso. param)
+  cabeçalho constObj = Objeto. de entradas (isso. cabeçalho)
+
+ cy. os log de registro(log====================================
+ cy. log('URL: ${url}')
+ cy. log (JSON. stringify(corpo))
+
+ retorno cy. solicitação({
+ método: 'POST',
+            url: url,
+            qs: paramObj,
+ cabeçalhos: cabeçalhosObj,
+ corpo: corpo,
+ failOnStatusCode: falso
+        })
+    }
+
+ executePatch = (url, corpo) => {
+ const paramObj = Objeto. de entradas (isso. param)
+  cabeçalho constObj = Objeto. de entradas (isso. cabeçalho)
+
+ cy. o registro de log(=============================================================================
+ cy. log('URL: ${url}')
+ cy. log (JSON. stringify(corpo))
+
+ retorno cy. solicitação({
+ método: 'PATCH',
+            url: url,
+            qs: paramObj,
+ cabeçalhos: cabeçalhosObj,
+ corpo: corpo,
+ failOnStatusCode: falso
+        })
+    }
+
+    executePut = (url, body) => {
+ const paramObj = Objeto. de entradas (isso. param)
+  cabeçalho constObj = Objeto. de entradas (isso. cabeçalho)
+
+ cy. o registro de registro(======================================
+ cy. log('URL: ${url}')
+ cy. log (JSON. stringify(corpo))
+
+ retorno cy. solicitação({
+ método: 'PUT',
+            url: url,
+            qs: paramObj,
+ cabeçalhos: cabeçalhosObj,
+ corpo: corpo,
+ failOnStatusCode: falso
+        })
+    }
+
+ executarDelete = (url, corpo) => {
+ const paramObj = Objeto. de entradas (isso. param)
+  cabeçalho constObj = Objeto. de entradas (isso. cabeçalho)
+
+ cy. o registro de log(=================== DELETE =================)
+ cy. log('URL: ${url}')
+ cy. log (JSON. stringify(corpo))
+
+ retorno cy. solicitação({
+ método: 'DELETE',
+            url: url,
+            qs: paramObj,
+ cabeçalhos: cabeçalhosObj,
+ corpo: corpo,
+ failOnStatusCode: falso
+        })
+    }
+
+ logResponse = (status, corpo) => {
+ cy. log ('--------------------------------')
+ cy. log('RESPOSTA')
+ cy. log ('Código de status: ${status}')
+ deixe responderBody = JSON. stringify (corpo)
+  const bodyAux = novo Cypress. Promessa((resolver, rejeitar) => resolver (responseBody))
+ bodyAux. em seguida(($res) => cy. log('Corpo: ${$res}')
+    }
+} 
